@@ -1,0 +1,29 @@
+{
+  "name": "choice-cuts",
+  "version": "1.0.0",
+  "description": "An e-commerce website for a butcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emjkenz/Choice-Cuts.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "handlebars"
+  ],
+  "author": "Team CC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emjkenz/Choice-Cuts/issues"
+  },
+  "homepage": "https://github.com/emjkenz/Choice-Cuts#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "sequelize": "^6.31.1"
+  }
+}
