@@ -28,6 +28,13 @@ User.init(
             type: DataTypes.STRING(64),
             allowNull: false
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
     }
 );
 
