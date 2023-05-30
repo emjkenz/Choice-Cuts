@@ -18,6 +18,7 @@ Product.init(
         },
         description: {
             type: DataTypes.STRING,
+            defaultValue: "",
             allowNull: false,
         },
         price: {
@@ -30,6 +31,7 @@ Product.init(
         stock: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 1,
             validate: {
                 isNumeric: true,
             },
