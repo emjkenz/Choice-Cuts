@@ -16,6 +16,11 @@ Product.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        image: {
+            type: DataTypes.STRING,
+            defaultValue: "",
+            allowNull: false,
+        },
         description: {
             type: DataTypes.STRING,
             defaultValue: "",
