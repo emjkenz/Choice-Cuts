@@ -25,6 +25,10 @@ router.get('/', async (req, res) => {
   // }
 });
 
+router.get('/test', async (req, res) => {
+  res.render('test');
+});
+
 // Update the path for the login route
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
