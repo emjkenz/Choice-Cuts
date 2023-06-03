@@ -14,18 +14,28 @@ h1 {
 }
 
 /* Fancy Button */
-.btn-fancy {
-  background-color: transparent;
-  color: #fff;
+.btn-fancy-white,
+.btn-fancy-black {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   text-decoration: none;
+  background-color: transparent;
+}
+.btn-fancy-white {
+  color: #fff;
   border: 2px solid #fff;
 }
-
-.btn-fancy:hover {
+.btn-fancy-white:hover {
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
+}
+.btn-fancy-black {
+  color: #000;
+  border: 2px solid #000;
+}
+.btn-fancy-black:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #000;
 }
 
 /* Hero image */
@@ -42,8 +52,30 @@ h1 {
   color: #fff;
 }
 
-/* 404 Page */
+/* Product Card */
+.product-card .product-title {
+  font-size: 20px;
+  text-align: center;
+}
+.product-card .product-meta {
+  display: flex;
+  justify-content: space-between;
+}
+.product-card .product-image-container {
+  overflow: hidden;
+}
+.product-card .product-image-container img {
+  width: auto;
+  height: 200px;
+}
+.product-card .product-price {
+  font-weight: bold;
+}
+.product-card .btn {
+  width: 100%;
+}
 
+/* 404 Page */
 .error-container {
   display: flex;
   flex-direction: column;
