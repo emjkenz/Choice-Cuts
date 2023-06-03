@@ -7,7 +7,7 @@ const userRoutes = require('./userRoutes.js');
 router.use('/', homeRoutes);
 
 router.use((req, res) => {
-    res.send("<h1>Wrong Route!</h1>")
+    res.status(404).render('404')
 });
 
 module.exports = router;
