@@ -8,7 +8,11 @@ router.get('/', async (req, res) => {
   Product.findAll()
   .then((products) => {
     const prod = products.map(product => product.get({plain: true}))
-    res.render('homepage', { title: " - Homepage", products: prod });
+    res.render('homepage', {
+      title: " - Homepage",
+      products: prod,
+      productCols: (products.length%2) > 0?4:3
+    });
   })
 
   

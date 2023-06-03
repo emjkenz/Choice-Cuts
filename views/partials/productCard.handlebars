@@ -1,13 +1,14 @@
 <div class="product-card">
     <div class="product-image-container">
-        <img class="product-image" src="{{image}}" alt="{{title}}">
+        <img class="product-image" src="{{image}}" alt="{{name}}">
     </div>
     <div class="product-details">
         <p class="product-title">{{name}}</p>
         <p class="product-description">{{description}}</p>
     </div>
     <div class="product-meta">
-        <p class="product-price">{{price}}</p>
-        <p class="product-stock">{{stock}}</p>
+        <p class="product-price">${{price}}</p>
+        <p class="product-stock">{{stock}} in stock</p>
     </div>
+    <a class="btn btn-fancy-black" href="/products/{{id}}">View Product</a>
 </div>
