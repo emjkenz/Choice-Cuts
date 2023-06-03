@@ -26,7 +26,7 @@ router.get('/search/:category', async (req, res) => {
 
     const products = productsData.map((product) => product.get({ plain: true }));
 
-    res.render('search-results', { products });
+    res.render('search-results', { products, title: " - Search" });
   } catch (err) {
     res.status(500).json(err);
   }

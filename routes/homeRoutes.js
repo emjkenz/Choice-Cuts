@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 // Prevent non-logged-in users from viewing the homepage
 router.get('/', async (req, res) => {
 
-  res.render('homepage');
+  res.render('homepage', {title: " - Homepage"});
 
   // try {
   //   const userData = await User.findAll({
@@ -37,7 +37,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {title: " - Login"});
 });
 
 module.exports = router;
