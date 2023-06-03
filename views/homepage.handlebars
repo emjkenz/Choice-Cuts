@@ -4,7 +4,7 @@
       <div class="hero-image">
         <h1>Welcome to Choice Cuts</h1>
         <p>Prime Cuts, Delivered to Your Doorstep</p>
-        <a href="#learn-more" class="btn btn-fancy">Learn More</a>
+        <a href="#learn-more" class="btn btn-fancy-white">Learn More</a>
       </div>
     </div>
   </div>
@@ -41,9 +41,13 @@
       <h2 class="text-center">Our Products</h2>
     </div>
     <div class="col-12">
-      {{#each products}}
-      {{> product}}
-      {{/each}}
+      <div class="row">
+        {{#each products}}
+        <div class="col-{{../productCols}}">
+          {{> productCard}}
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
