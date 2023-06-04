@@ -1,15 +1,46 @@
-/* styles.css */
+/* style.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
-    margin-top: 50px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .form-inline {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+  flex: 1;
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-inline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+body {
+  background-image: url("/assets/images/Burger-Black-Cutting-board-scaled.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
   
