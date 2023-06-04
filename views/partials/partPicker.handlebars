@@ -1,0 +1,65 @@
+<style>
+    {{#each meat_parts}}
+    .meat-parts .draggable-item[data-item="{{name}}"] {
+        top: {{top}}px;
+        left: {{left}}px;
+    }
+    {{/each}}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="picker-container">
+                <div class="meat-picker">
+                    {{!-- Base image --}}
+                    <div class="meat-base">
+                        <img src="{{base_image}}" alt="{{name}}">
+                    </div>
+                    <div class="meat-parts">
+                        {{#each meat_parts}}
+                        <img class="draggable-item" data-item="{{name}}" data-price="{{price}}" src="{{image}}" alt="{{name}}">
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Choose your Cuts</h2>
+        <div class="col-md-6">
+            <div id="shopping-cart">
+                <i class="fa fa-cart-plus"></i>             
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Items</h3>
+            <ul id="cart-items">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.draggable-item').draggable({
+        helper: 'clone',
+        revert: 'invalid'
+      });
+
+      $('#shopping-cart').droppable({
+        accept: '.draggable-item',
+        drop: function(event, ui) {
+          var item = ui.helper.data('item');
+        var price = ui.helper.data('price');
+          $('<li class="item">' + item + '<span>$'+price+' <button class="remove-item"><i class="fa fa-circle-xmark"></i></button></span></li>').appendTo('#cart-items');
+        }
+      });
+
+      $('#cart-items').on('click', '.remove-item', function() {
+        $(this).parent().parent().remove();
+      });
+    });
+</script>
