@@ -1,5 +1,5 @@
 <style>
-    {{#each meat_parts}}
+    {{#each cuts.meat_parts}}
     .meat-parts .draggable-item[data-item="{{name}}"] {
         top: {{top}}px;
         left: {{left}}px;
@@ -14,10 +14,10 @@
                 <div class="meat-picker">
                     {{!-- Base image --}}
                     <div class="meat-base">
-                        <img src="{{base_image}}" alt="{{name}}">
+                        <img src="{{cuts.base_image}}" alt="{{name}}">
                     </div>
                     <div class="meat-parts">
-                        {{#each meat_parts}}
+                        {{#each cuts.meat_parts}}
                         <img class="draggable-item" data-item="{{name}}" data-price="{{price}}" src="{{image}}" alt="{{name}}">
                         {{/each}}
                     </div>
