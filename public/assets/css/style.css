@@ -139,27 +139,21 @@ h1 {
   height: 100vh;
 }
 
-@media screen and (max-width:545px) {
-  body {
-    height: 75vh;
-  }
-}
-
-.btn-primary {
+.loginContainer .btn-primary {
   width: 100%
 }
 
-form {
+.loginContainer form {
   background: #fff;
   padding: 40px;
   border-radius: 20px;
 }
 
-#Password {
+.loginContainer #Password {
   border: 1px solid #000 !important;
 }
 
-.btn-rsvp {
+.loginContainer .btn-rsvp {
   font-family: Arial;
   background: none;
   border-radius: 0;
@@ -168,7 +162,7 @@ form {
   text-transform: uppercase;
 }
 
-.btn-rsvp:hover {
+.loginContainer .btn-rsvp:hover {
   background: #333;
   color: #fff;
   border-color: #333;
