@@ -21,18 +21,22 @@ h1 {
   text-decoration: none;
   background-color: transparent;
 }
+
 .btn-fancy-white {
   color: #fff;
   border: 2px solid #fff;
 }
+
 .btn-fancy-white:hover {
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
 }
+
 .btn-fancy-black {
   color: #000;
   border: 2px solid #000;
 }
+
 .btn-fancy-black:hover {
   background-color: rgba(0, 0, 0, 0.3);
   color: #000;
@@ -57,20 +61,25 @@ h1 {
   font-size: 20px;
   text-align: center;
 }
+
 .product-card .product-meta {
   display: flex;
   justify-content: space-between;
 }
+
 .product-card .product-image-container {
   overflow: hidden;
 }
+
 .product-card .product-image-container img {
   width: auto;
   height: 200px;
 }
+
 .product-card .product-price {
   font-weight: bold;
 }
+
 .product-card .btn {
   width: 100%;
 }
@@ -109,4 +118,60 @@ h1 {
 .error-container a:hover {
   background-color: #c82333;
 }
-  
+
+/* ----------------- login form */
+
+.loginBody {
+  background: url('/assets/images/cowField2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media screen and (max-width:545px) {
+  body {
+    height: 75vh;
+  }
+}
+
+.btn-primary {
+  width: 100%
+}
+
+form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+#Password {
+  border: 1px solid #000 !important;
+}
+
+.btn-rsvp {
+  font-family: Arial;
+  background: none;
+  border-radius: 0;
+  border: 1px solid #333;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.btn-rsvp:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ---------- login page end */
