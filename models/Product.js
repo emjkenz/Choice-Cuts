@@ -26,13 +26,6 @@ Product.init(
             defaultValue: "",
             allowNull: false,
         },
-        price: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
-            validate: {
-                isDecimal: true,
-            },
-        },
         stock: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -48,6 +41,10 @@ Product.init(
                 key: 'id',
             },
         },
+        cuts: {
+            type: DataTypes.JSON,
+            allowNull: true
+        }
     },
     {
         sequelize,

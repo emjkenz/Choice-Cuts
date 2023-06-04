@@ -1,5 +1,7 @@
 const { Product } = require('../models');
 
+const {cow, pig} = require('../picker');
+
 const productData = [
     {
         name: 'Cow',
@@ -7,6 +9,7 @@ const productData = [
         price: 1337,
         stock: 69,
         category_id: 1,
+        cuts: cow,
     },
     {
         name: 'Chicken',
@@ -21,6 +24,7 @@ const productData = [
         price: 333,
         stock: 666,
         category_id: 3,
+        cuts: pig,
     },
     {
         name: 'Sheep',
