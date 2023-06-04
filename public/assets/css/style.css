@@ -121,11 +121,22 @@ h1 {
 
 /* ----------------- login form */
 
+.loginBody {
+  background: url('/assets/images/cowField2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
 .loginContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 @media screen and (max-width:545px) {
@@ -163,4 +174,4 @@ form {
   border-color: #333;
 }
 
-/* ---------- */
+/* ---------- login page end */
