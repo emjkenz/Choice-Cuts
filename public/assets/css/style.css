@@ -56,6 +56,14 @@ h1 {
   color: #fff;
 }
 
+/* Product Page */
+.product-image img {
+  width: 50%;
+}
+.coming-soon {
+  font-size: 50px;
+}
+
 /* Product Card */
 .product-card .product-title {
   font-size: 20px;
@@ -175,3 +183,61 @@ form {
 }
 
 /* ---------- login page end */
+
+/* Meat Picker */
+
+.picker-container {
+  text-align: center;
+}
+
+.meat-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.meat-parts {
+  position: absolute;
+  top: 0;
+}
+
+.meat-parts img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+#shopping-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shopping-cart i {
+  font-size: 200px;
+  color: #000;
+}
+
+h3,
+#cart-items {
+  text-align: center;
+}
+
+#cart-items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+#cart-items .remove-item {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
