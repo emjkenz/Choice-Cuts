@@ -56,6 +56,14 @@ h1 {
   color: #fff;
 }
 
+/* Product Page */
+.product-image img {
+  width: 50%;
+}
+.coming-soon {
+  font-size: 50px;
+}
+
 /* Product Card */
 .product-card .product-title {
   font-size: 20px;
