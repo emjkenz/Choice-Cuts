@@ -1,5 +1,4 @@
 const pig = {
-    name: 'pig',
     base_image: '/assets/pig/Pig_Extras.png',
     meat_parts: [
         {
