@@ -1,8 +1,8 @@
-const Hanlebars = require('handlebars');
+const Handlebars = require('handlebars');
 
 // Get current year
 const getCurrentYear = new Date().getFullYear();
 
-Hanlebars.registerHelper('currentYear', getCurrentYear);
+Handlebars.registerHelper('currentYear', getCurrentYear);
 
-module.exports = Hanlebars
+module.exports = Handlebars
