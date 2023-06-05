@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model { }
@@ -25,8 +25,12 @@ User.init(
             allowNull: false
         },
         password: {
-            type: DataTypes.STRING(64),
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false,
+            set(value) {
+                const hashedPassword = bcrypt.hashSync(value, 10);
+                this.setDataValue('password', hashedPassword);
+            },
         }
     },
     {
@@ -37,5 +41,9 @@ User.init(
         modelName: 'user',
     }
 );
+
+User.prototype.checkPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
+};
 
 module.exports = User
