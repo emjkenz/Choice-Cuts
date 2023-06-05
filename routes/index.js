@@ -3,12 +3,14 @@ const homeRoutes = require('./homeRoutes.js');
 const categoryRoutes = require('./categoryRoutes.js');
 const productRoutes = require('./productRoutes.js');
 const userRoutes = require('./userRoutes.js');
-const aboutusRoutes = require('./aboutusRoutes')
+const aboutusRoutes = require('./aboutusRoutes');
+const checkoutRoutes = require('./checkoutRoutes.js');
 
-router.use('/login/', userRoutes)
-router.use('/aboutus/', aboutusRoutes)
+router.use('/checkout/', checkoutRoutes);
+router.use('/login/', userRoutes);
+router.use('/aboutus/', aboutusRoutes);
 router.use('/search/', categoryRoutes);
-router.use('/products/', productRoutes)
+router.use('/products/', productRoutes);
 router.use('/', homeRoutes);
 
 router.use((req, res) => {
