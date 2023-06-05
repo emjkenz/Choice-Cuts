@@ -60,6 +60,7 @@ h1 {
 .product-image img {
   width: 50%;
 }
+
 .coming-soon {
   font-size: 50px;
 }
@@ -235,3 +236,19 @@ h3,
   background: none;
   border: none;
 }
+
+/* aboutus image and page */
+.aboutUsBody {
+  background: url('/assets/images/sunsetField.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/*.AboutUS {
+  justify-content: center;
+}
+*/
