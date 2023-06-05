@@ -20,6 +20,10 @@ nav .avatar svg {
   width: 40px;
   height: 40px;
 }
+nav .nav-logo img {
+  width: auto;
+  height: 40px;
+}
 
 .form-inline {
   display: flex;
@@ -263,7 +267,20 @@ h3,
   justify-content: center;
 }
 
-/*.AboutUS {
+.AboutUsCard {
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+}
+
+/* checkout page */
+
+.checkoutBody {
+  background: url('/assets/images/rusticKitchen.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
   justify-content: center;
 }
-*/
