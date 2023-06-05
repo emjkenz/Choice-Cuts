@@ -14,29 +14,6 @@ router.get('/', async (req, res) => {
       productCols: (products.length%2) > 0?4:3
     });
   })
-
-  
-
-  // try {
-  //   const userData = await User.findAll({
-  //     attributes: { exclude: ['password'] },
-  //     order: [['name', 'ASC']],
-  //   });
-
-  //   const users = userData.map((project) => project.get({ plain: true }));
-
-  //   res.render('homepage', {
-  //     users,
-  //     // Pass the logged-in flag to the template
-  //     logged_in: req.session.logged_in,
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
-});
-
-router.get('/test', async (req, res) => {
-  res.render('test');
 });
 
 // Update the path for the login route
@@ -48,6 +25,18 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login', {title: " - Login"});
+});
+
+router.get('/dashboard/', withAuth, async(req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id)
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', user);
+  } catch (err) {
+    res.redirect('/login');
+  }
 });
 
 module.exports = router;
