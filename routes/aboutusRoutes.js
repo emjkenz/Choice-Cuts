@@ -5,8 +5,7 @@ router.get('/', async (req, res) => {
     // You can perform any necessary logic or database queries here
     
     const data = {
-      pageTitle: 'About Us',
-    
+      title: ' - About Us',
     };
 
     res.render('aboutus', data);
