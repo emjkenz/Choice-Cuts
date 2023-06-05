@@ -244,15 +244,26 @@ h3,
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
-.AboutUsCard {
-  height: 100vh;
-  justify-content: center;
-  display: flex;
+.aboutUsCard {
+  padding: 4% 10%;
+}
+
+.about-body {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5%;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.aboutUsBody .about-image-container {
+  text-align: center;
+}
+
+.aboutUsBody img.about-image {
+  width: 250px;
+  height: auto;
 }
 
 /* checkout page */
