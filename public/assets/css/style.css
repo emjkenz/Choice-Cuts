@@ -56,6 +56,15 @@ h1 {
   color: #fff;
 }
 
+/* Product Page */
+.product-image img {
+  width: 50%;
+}
+
+.coming-soon {
+  font-size: 50px;
+}
+
 /* Product Card */
 .product-card .product-title {
   font-size: 20px;
@@ -139,28 +148,22 @@ h1 {
   height: 100vh;
 }
 
-@media screen and (max-width:545px) {
-  body {
-    height: 75vh;
-  }
-}
-
-.btn-primary {
+.loginContainer .btn-primary {
   width: 100%
 }
 
-form {
+.loginContainer form {
   background: #fff;
   padding: 40px;
   border-radius: 20px;
 }
 
-#Password,
-.loginContainer #Email{
+.loginContainer #Email,
+.loginContainer #Password {
   border: 1px solid #000 !important;
 }
 
-.btn-rsvp {
+.loginContainer .btn-rsvp {
   font-family: Arial;
   background: none;
   border-radius: 0;
@@ -169,10 +172,84 @@ form {
   text-transform: uppercase;
 }
 
-.btn-rsvp:hover {
+.loginContainer .btn-rsvp:hover {
   background: #333;
   color: #fff;
   border-color: #333;
 }
 
 /* ---------- login page end */
+
+/* Meat Picker */
+
+.picker-container {
+  text-align: center;
+}
+
+.meat-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.meat-parts {
+  position: absolute;
+  top: 0;
+}
+
+.meat-parts img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+#shopping-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shopping-cart i {
+  font-size: 200px;
+  color: #000;
+}
+
+h3,
+#cart-items {
+  text-align: center;
+}
+
+#cart-items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+#cart-items .remove-item {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* aboutus image and page */
+.aboutUsBody {
+  background: url('/assets/images/sunsetField.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/*.AboutUS {
+  justify-content: center;
+}
+*/

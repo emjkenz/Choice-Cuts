@@ -2,10 +2,16 @@
     <div class="row">
         <div class="col-12">
             <h1>{{name}}</h1>
+            {{#if cuts}}
             <div>
+                {{> partPicker}}
+            </div>
+            {{else}}
+            <div class="text-center product-image">
                 <img src="{{image}}" alt="{{name}}">
             </div>
-            <p>Price: ${{price}}</p>
+            <p class="text-center coming-soon">Picker Coming Soon</p>
+            {{/if}}
         </div>
     </div>
 </div>
