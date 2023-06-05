@@ -249,7 +249,21 @@ h3,
   justify-content: center;
 }
 
-/*.AboutUS {
+.AboutUsCard {
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+}
+
+
+/* checkout page */
+
+.checkoutBody {
+  background: url('/assets/images/rusticKitchen.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
   justify-content: center;
 }
-*/
