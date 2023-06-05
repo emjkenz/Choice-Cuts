@@ -1,5 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Choice Cuts</a>
+    <div class="nav-logo">
+        <a class="navbar-brand mx-3" href="/">
+            <img src="/assets/images/CClogoWhite.png" alt="Choice Cuts">
+        </a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,10 +19,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/aboutus"><i class="fas fa-users"></i> About Us</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="/dashboard"><i class="fas fa-cog"></i> Dashboard</a>
             </li>
         </ul>
+    </div>
+    <div class="user">
+        <div class="username">{{user.first_name}} {{user.last_name}}</div>
+        <div class="avatar">{{{user.avatar}}}</div>
     </div>
 </nav>
