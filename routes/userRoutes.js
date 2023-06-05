@@ -1,34 +1,54 @@
 const router = require('express').Router();
 const { User } = require('../models');
+const bcrypt = require('bcrypt');
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        const login = Object.keys(req.body).length > 0 ? req.body : req.query;
 
-        if (!userData) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+        if (!login.email && !login.password) {
+            res.render('login', {
+                error: 'is-invalid',
+                message: 'Please provide a username and password'
+            })
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
+        const userData = await User.findOne({
+            where: {
+                email: login.email
+            }
+        });
+
+        if (!userData) {
+            res.render('login', {
+                error: 'is-invalid',
+                message: 'User does not exist',
+            })
+            return;
+        }
+
+        const user = userData.get({ plain: true })
+
+        const validPassword = bcrypt.compareSync(login.password)
 
         if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+            res.render('login', {
+                error: 'is-invalid',
+                message: 'Incorrect email or password, please try again',
+            })
             return;
         }
 
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-
-            res.json({ user: userData, message: 'You are now logged in!' });
         });
+        console.log("here");
+        res.redirect('../dashboard')
 
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
