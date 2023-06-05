@@ -1,9 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Welcome {{first_name}} {{last_name}}</h1>
+            <h1>Welcome {{user.first_name}} {{user.last_name}}</h1>
+            <div class="avatar text-center">{{{user.avatar}}}</div>
         </div>
-        <div class="col-12 text-center">
+        <div class="col-12 text-center py-3">
             <form action="/login/logout" method="post">
                 <button class="btn btn-danger">Logout</button>
             </form>
