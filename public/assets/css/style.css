@@ -155,7 +155,8 @@ form {
   border-radius: 20px;
 }
 
-#Password {
+#Password,
+.loginContainer #Email{
   border: 1px solid #000 !important;
 }
 
