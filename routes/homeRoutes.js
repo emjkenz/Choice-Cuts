@@ -5,13 +5,21 @@ const withAuth = require('../utils/auth');
 // Prevent non-logged-in users from viewing the homepage
 router.get('/', async (req, res) => {
 
+  let user = {}
+
+  if (req.session.user_id) {
+    user = await User.findByPk(req.session.user_id)
+    user = user.get({plain: true})
+  }
+
   Product.findAll()
   .then((products) => {
     const prod = products.map(product => product.get({plain: true}))
     res.render('homepage', {
       title: " - Homepage",
       products: prod,
-      productCols: (products.length%2) > 0?4:3
+      productCols: (products.length%2) > 0?4:3,
+      user
     });
   })
 });
@@ -33,7 +41,7 @@ router.get('/dashboard/', withAuth, async(req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('dashboard', user);
+    res.render('dashboard', {user});
   } catch (err) {
     res.redirect('/login');
   }
