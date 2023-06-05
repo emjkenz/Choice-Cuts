@@ -249,10 +249,12 @@ h3,
   justify-content: center;
 }
 
-/*.AboutUS {
+.AboutUsCard {
+  height: 100vh;
   justify-content: center;
+  display: flex;
 }
-*/
+
 
 /* checkout page */
 
