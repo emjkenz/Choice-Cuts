@@ -27,25 +27,16 @@ router.get('/login', (req, res) => {
   res.render('login', {title: " - Login"});
 });
 
-router.get('/dashboard', withAuth, async(req, res) => {
+router.get('/dashboard/', withAuth, async(req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
+    const userData = await User.findByPk(req.session.user_id)
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
-    res.render('dashboard', {
-      users,
-      // Pass the logged-in flag to the template
-      logged_in: req.session.logged_in,
-    });
+    res.render('dashboard', user);
   } catch (err) {
-    res.status(503).redirect('/login');
+    res.redirect('/login');
   }
-  
-  res.render('dashboard')
 });
 
 module.exports = router;

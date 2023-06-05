@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
         const user = userData.get({ plain: true })
 
-        const validPassword = bcrypt.compareSync(login.password)
+        const validPassword = bcrypt.compareSync(login.password, user.password)
 
         if (!validPassword) {
             res.render('login', {
@@ -40,12 +40,11 @@ router.post('/', async (req, res) => {
             return;
         }
 
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-        });
-        console.log("here");
-        res.redirect('../dashboard')
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+
+        console.log(req.session);
+        res.redirect('/dashboard')
 
     } catch (err) {
         console.log(err);
