@@ -7,6 +7,19 @@ h1 {
   text-align: center;
 }
 
+/* Navbar */
+nav .user {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+nav .user > div {
+  padding: 5px 10px;
+}
+nav .avatar svg {
+  width: 40px;
+  height: 40px;
+}
 nav .nav-logo img {
   width: auto;
   height: 40px;
