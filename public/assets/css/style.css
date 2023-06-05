@@ -7,6 +7,11 @@ h1 {
   text-align: center;
 }
 
+nav .nav-logo img {
+  width: auto;
+  height: 40px;
+}
+
 .form-inline {
   display: flex;
   justify-content: center;
