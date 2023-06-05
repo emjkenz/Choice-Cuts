@@ -16,6 +16,7 @@ const sess = {
   secret: 'Super secret secret',
   resave: false,
   saveUninitialized: true,
+  store: new session.MemoryStore(),
 };
 
 app.use(session(sess));
