@@ -32,7 +32,7 @@
                 <i class="fa fa-cart-plus"></i>             
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
             <h3>Items</h3>
             <ul id="cart-items">
             </ul>
@@ -43,7 +43,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
+    var list = [];
+
+    function removeItemAtIndex(arr, index) {
+        if (index < 0 || index >= arr.length) {
+            // Index is out of bounds, return the original array
+            return arr;
+        }
+
+        // Create a new array that excludes the item at the specified index
+        const updatedArray = [...arr.slice(0, index), ...arr.slice(index + 1)];
+
+        return updatedArray;
+    }
+    
     $(document).ready(function() {
+
       $('.draggable-item').draggable({
         helper: 'clone',
         revert: 'invalid'
@@ -52,14 +67,41 @@
       $('#shopping-cart').droppable({
         accept: '.draggable-item',
         drop: function(event, ui) {
-          var item = ui.helper.data('item');
-        var price = ui.helper.data('price');
-          $('<li class="item">' + item + '<span>$'+price+' <button class="remove-item"><i class="fa fa-circle-xmark"></i></button></span></li>').appendTo('#cart-items');
+            var item = ui.helper.data('item');
+            var price = ui.helper.data('price');
+            list.push({item: item, price: price})
+            $('<li class="item">' + item + '<span>$'+price+' <button class="remove-item" data-index="'+list.length+'"><i class="fa fa-circle-xmark"></i></button></span></li>').appendTo('#cart-items');
+            if ($('#cart-items li').length === 1) {
+                $('#cart-items').after('<button class="btn btn-fancy-black" id="buy">Buy</button>');
+            }
+            console.log(list)
         }
       });
 
       $('#cart-items').on('click', '.remove-item', function() {
         $(this).parent().parent().remove();
+        list = removeItemAtIndex(list, $(this).attr('data-index'))
+        if ($('#cart-items').length === 1){
+            $('#buy').remove();
+        }
       });
+
+      $(document).on('click', '#buy', function() {
+        $.ajax({
+              url: "/checkout",
+              method: "POST",
+              data: {
+                item: list
+              },
+              success: function (response) {
+                  window.location.href = '/checkout';
+                  // Handle the response from the server if needed
+              },
+              error: function (xhr, status, error) {
+                  console.error("Error posting data to the URL: " + error);
+                  // Handle the error if needed
+              }
+          });
+      })
     });
 </script>

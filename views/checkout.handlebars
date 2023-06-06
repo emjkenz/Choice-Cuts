@@ -1,5 +1,21 @@
 <div class="checkoutBody">
-
-
+    <div class="container my-0">
+        <div class="row">
+            <div class="col-12">
+                <div class="checkout-container">
+                    <h1>Checkout</h1>
+                    <div class="col-12">
+                        {{#each items}}
+                        <p class="checkout-item">{{item}} <span>${{price}}</span></p>
+                        {{/each}}
+                    </div>
+                    <div class="col-12 text-right">
+                        <button class="btn btn-fancy-black" disabled>Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 </div>
