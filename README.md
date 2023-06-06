@@ -24,6 +24,9 @@ Our team identified a gap in the market, and have attempted to solve the issue b
 
 Working on this project has been both entertaining and educational as each developer has had to work alongside each other, communicate effectively and put our skills and knowledge to the ultimate test to create a fully functioning, full stack website within a short timeframe.
 
+## Live Website
+[Choice Cuts](https://choice-cuts.herokuapp.com/)
+
 ## Table of Contents 
 
 - [Installation](#installation)
@@ -44,8 +47,11 @@ For use and how to run the code after installing all necessary packages, you jus
 ## Credits
 
 https://github.com/AJChrystall
+
 https://github.com/emjkenz
+
 https://github.com/ChrGrace
+
 https://github.com/taskinoz
 
 ## License
